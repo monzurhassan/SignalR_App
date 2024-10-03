@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var username = ViewData["Username"]?.ToString();
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-right">
+            <a href="/Access/Logout" class="btn btn-sm btn-danger">Logout</a>
+        </div>
+    </div>
+
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-2">User</div>
+        <div class="col-4">           
+            <input type="text" class="form-control" id="userInput" value="@username" readonly/>
+        </div>
+    </div>
+    &nbsp;
+    <div class="row">
+        <div class="col-2">Message</div>
+        <div class="col-4">
+            <input type="text" class="form-control" id="messageInput" />
+        </div>
+    </div>
+    <div class="row">&nbsp;</div>
+
+    <div class="row">
+        <div class="col-6">
+            <input type="button" class="btn btn-sm btn-outline-success" id="sendButton" value="Send Message" />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <hr />
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <ul id="messagesList"></ul>
+    </div>
+</div>
+
+<!-- SignalR Scripts -->
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/signalr/clienthub.js"></script>
