@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-6">
             <h2>Login</h2>
-                    
+       
             @if (!string.IsNullOrEmpty(ViewBag.Error))
             {
                 <div class="alert alert-danger">
@@ -18,17 +18,31 @@
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" class="form-control" id="username" name="username" />
+                                   
+                    @if (!string.IsNullOrEmpty(ViewBag.UsernameError))
+                    {
+                        <div class="text-danger">
+                            @ViewBag.UsernameError
+                        </div>
+                    }
                 </div>
                 &nbsp;
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" class="form-control" id="password" name="password" />
+
+                    @if (!string.IsNullOrEmpty(ViewBag.PasswordError))
+                    {
+                        <div class="text-danger">
+                            @ViewBag.PasswordError
+                        </div>
+                    }
                 </div>
                 <div class="row">&nbsp;</div>
 
                 <div class="row">
                     <div class="col-6">
-                        <input type="submit" class="btn btn-sm btn-outline-success" id="login" value="Login" />
+                        <input type="submit" class="btn btn-sm btn-outline-info" id="login" value="Login" />
                     </div>
                 </div>
             </form>
